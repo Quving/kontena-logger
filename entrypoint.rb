@@ -26,7 +26,7 @@ required_envs.each do |env|
 end
 
 log_file='logs'
-cmd = "kontena service logs -f %s > %s 2>&1 &" % (ENV["KONTENA_SERVICE"], log_file)
+cmd = "kontena service logs -f %s > %s 2>&1 &" % [ENV["KONTENA_SERVICE"], log_file]
 execute_bash_cmd(cmd)
 
 $logger. info("Log service %s..." % ENV["KONTENA_SERVICE"])
